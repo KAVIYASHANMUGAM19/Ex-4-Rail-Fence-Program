@@ -30,32 +30,31 @@ STEP-5: Read the characters row wise or column wise in the former order to get t
  int i, j, k, l;
  char a[20], c[20], d[20];
  printf("\n\t\tRAIL FENCE TECHNIQUE\n");
- // Safely getting input string using fgets instead of gets
  printf("\nEnter the input string: ");
  fgets(a, sizeof(a), stdin);
- // Removing the newline character if it exists
 a[strcspn(a, "\n")] = '\0';
- l = strlen(a); // Get the length of the input string
- // Rail fence encryption: first collect even indices, then odd
+ l = strlen(a); 
  for (i = 0, j = 0; i < l; i++) {
- if (i % 2 == 0) {
- c[j++] = a[i];
+        if (i % 2 == 0)
+      {
+         c[j++] = a[i];
+        }
  }
+ for (i = 0; i < l; i++)
+{
+    if (i % 2 == 1)
+   {
+     c[j++] = a[i];
+    }
  }
- for (i = 0; i < l; i++) {
- if (i % 2 == 1) {
- c[j++] = a[i];
- }
- }
- c[j] = '\0'; // Null-terminate the encrypted string
+ c[j] = '\0'; 
  printf("\nCipher text after applying rail fence: %s\n", c);
- // Rail fence decryption
  if (l % 2 == 0) {
  k =l / 2;
  } else {
  k =(l / 2) + 1;
  }
- // Reconstructing the original text
+
  for (i = 0, j = 0; i < k; i++) {
  d[j] = c[i];
  j += 2;
@@ -64,9 +63,9 @@ a[strcspn(a, "\n")] = '\0';
 d[j] = c[i];
  j += 2;
  }
- d[l] = '\0'; // Null-terminate the decrypted string
+ d[l] = '\0'; 
  printf("\nText after decryption: %s\n", d);
- return 0; // Properly return from main
+ return 0; 
  }
 ```
 # OUTPUT
