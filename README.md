@@ -47,13 +47,14 @@ a[strcspn(a, "\n")] = '\0';
      c[j++] = a[i];
     }
  }
- c[j] = '\0'; 
+  c[j] = '\0'; 
  printf("\nCipher text after applying rail fence: %s\n", c);
  if (l % 2 == 0) {
- k =l / 2;
- } else {
+    k =l / 2;
+    } else
+   {
  k =(l / 2) + 1;
- }
+   }
 
  for (i = 0, j = 0; i < k; i++) {
  d[j] = c[i];
